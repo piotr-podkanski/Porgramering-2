@@ -3,14 +3,13 @@ using System;
 using System.Drawing;
 using System.Windows.Forms;
 
-internal class Pencil : ToolBase
+internal class Eraser : ToolBase
 {
-    public Pencil(Color color, int size) : base(color, size)
+    public Eraser(Color color, int size) : base(color, size)
     {
-        InitPen();
+        InitEraser();
     }
-
-    private void InitPen()
+    private void InitEraser()
     {
         pen.SetLineCap(System.Drawing.Drawing2D.LineCap.Round,
             System.Drawing.Drawing2D.LineCap.Round,

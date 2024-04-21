@@ -39,8 +39,8 @@
             pxbTrash = new PictureBox();
             pxbSpray = new PictureBox();
             pxbBucket = new PictureBox();
-            pxbErazer = new PictureBox();
-            pxbBrush = new PictureBox();
+            pxbEraser = new PictureBox();
+            pxbPencil = new PictureBox();
             pxbCanvas = new PictureBox();
             pnlTop.SuspendLayout();
             pnlR.SuspendLayout();
@@ -50,8 +50,8 @@
             ((System.ComponentModel.ISupportInitialize)pxbTrash).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pxbSpray).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pxbBucket).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pxbErazer).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pxbBrush).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pxbEraser).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pxbPencil).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pxbCanvas).BeginInit();
             SuspendLayout();
             // 
@@ -99,8 +99,8 @@
             pnlR.Controls.Add(pxbTrash);
             pnlR.Controls.Add(pxbSpray);
             pnlR.Controls.Add(pxbBucket);
-            pnlR.Controls.Add(pxbErazer);
-            pnlR.Controls.Add(pxbBrush);
+            pnlR.Controls.Add(pxbEraser);
+            pnlR.Controls.Add(pxbPencil);
             pnlR.Dock = DockStyle.Right;
             pnlR.Location = new Point(830, 60);
             pnlR.Name = "pnlR";
@@ -122,7 +122,7 @@
             pxbSave.BackColor = Color.White;
             pxbSave.BorderStyle = BorderStyle.Fixed3D;
             pxbSave.Image = (Image)resources.GetObject("pxbSave.Image");
-            pxbSave.Location = new Point(10, 564);
+            pxbSave.Location = new Point(10, 578);
             pxbSave.Name = "pxbSave";
             pxbSave.Size = new Size(50, 50);
             pxbSave.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -136,18 +136,21 @@
             nudSize.Name = "nudSize";
             nudSize.Size = new Size(50, 33);
             nudSize.TabIndex = 6;
+            nudSize.Value = new decimal(new int[] { 4, 0, 0, 0 });
             // 
             // pxbTrash
             // 
             pxbTrash.BackColor = Color.White;
             pxbTrash.BorderStyle = BorderStyle.Fixed3D;
             pxbTrash.Image = (Image)resources.GetObject("pxbTrash.Image");
-            pxbTrash.Location = new Point(10, 508);
+            pxbTrash.Location = new Point(10, 522);
             pxbTrash.Name = "pxbTrash";
             pxbTrash.Size = new Size(50, 50);
             pxbTrash.SizeMode = PictureBoxSizeMode.StretchImage;
             pxbTrash.TabIndex = 5;
             pxbTrash.TabStop = false;
+            pxbTrash.MouseDown += pxbTrash_MouseDown;
+            pxbTrash.MouseUp += pxbTrash_MouseUp;
             // 
             // pxbSpray
             // 
@@ -160,6 +163,7 @@
             pxbSpray.SizeMode = PictureBoxSizeMode.StretchImage;
             pxbSpray.TabIndex = 4;
             pxbSpray.TabStop = false;
+            pxbSpray.Click += pxbSpray_Click;
             // 
             // pxbBucket
             // 
@@ -172,30 +176,33 @@
             pxbBucket.SizeMode = PictureBoxSizeMode.StretchImage;
             pxbBucket.TabIndex = 3;
             pxbBucket.TabStop = false;
+            pxbBucket.Click += pxbBucket_Click;
             // 
-            // pxbErazer
+            // pxbEraser
             // 
-            pxbErazer.BackColor = Color.White;
-            pxbErazer.BorderStyle = BorderStyle.Fixed3D;
-            pxbErazer.Image = (Image)resources.GetObject("pxbErazer.Image");
-            pxbErazer.Location = new Point(10, 101);
-            pxbErazer.Name = "pxbErazer";
-            pxbErazer.Size = new Size(50, 50);
-            pxbErazer.SizeMode = PictureBoxSizeMode.StretchImage;
-            pxbErazer.TabIndex = 2;
-            pxbErazer.TabStop = false;
+            pxbEraser.BackColor = Color.White;
+            pxbEraser.BorderStyle = BorderStyle.Fixed3D;
+            pxbEraser.Image = (Image)resources.GetObject("pxbEraser.Image");
+            pxbEraser.Location = new Point(10, 101);
+            pxbEraser.Name = "pxbEraser";
+            pxbEraser.Size = new Size(50, 50);
+            pxbEraser.SizeMode = PictureBoxSizeMode.StretchImage;
+            pxbEraser.TabIndex = 2;
+            pxbEraser.TabStop = false;
+            pxbEraser.Click += pxbEraser_Click;
             // 
-            // pxbBrush
+            // pxbPencil
             // 
-            pxbBrush.BackColor = Color.Silver;
-            pxbBrush.BorderStyle = BorderStyle.Fixed3D;
-            pxbBrush.Image = (Image)resources.GetObject("pxbBrush.Image");
-            pxbBrush.Location = new Point(10, 45);
-            pxbBrush.Name = "pxbBrush";
-            pxbBrush.Size = new Size(50, 50);
-            pxbBrush.SizeMode = PictureBoxSizeMode.StretchImage;
-            pxbBrush.TabIndex = 1;
-            pxbBrush.TabStop = false;
+            pxbPencil.BackColor = Color.Silver;
+            pxbPencil.BorderStyle = BorderStyle.Fixed3D;
+            pxbPencil.Image = (Image)resources.GetObject("pxbPencil.Image");
+            pxbPencil.Location = new Point(10, 45);
+            pxbPencil.Name = "pxbPencil";
+            pxbPencil.Size = new Size(50, 50);
+            pxbPencil.SizeMode = PictureBoxSizeMode.StretchImage;
+            pxbPencil.TabIndex = 1;
+            pxbPencil.TabStop = false;
+            pxbPencil.Click += pxbPencil_Click;
             // 
             // pxbCanvas
             // 
@@ -230,8 +237,8 @@
             ((System.ComponentModel.ISupportInitialize)pxbTrash).EndInit();
             ((System.ComponentModel.ISupportInitialize)pxbSpray).EndInit();
             ((System.ComponentModel.ISupportInitialize)pxbBucket).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pxbErazer).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pxbBrush).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pxbEraser).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pxbPencil).EndInit();
             ((System.ComponentModel.ISupportInitialize)pxbCanvas).EndInit();
             ResumeLayout(false);
         }
@@ -240,8 +247,8 @@
 
         private Panel pnlTop;
         private Panel pnlR;
-        private PictureBox pxbErazer;
-        private PictureBox pxbBrush;
+        private PictureBox pxbEraser;
+        private PictureBox pxbPencil;
         private Button btnExit;
         private PictureBox pxbBucket;
         private PictureBox pxbSpray;
