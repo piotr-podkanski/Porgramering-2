@@ -33,24 +33,26 @@
             lblName = new Label();
             btnExit = new Button();
             pnlR = new Panel();
-            pbxTrash = new PictureBox();
-            pbxSpray = new PictureBox();
-            pbxBucket = new PictureBox();
-            pbxErazer = new PictureBox();
-            pbxBrush = new PictureBox();
+            pxbColor = new PictureBox();
+            pxbSave = new PictureBox();
             nudSize = new NumericUpDown();
-            pictureBox1 = new PictureBox();
-            pbxColor = new PictureBox();
+            pxbTrash = new PictureBox();
+            pxbSpray = new PictureBox();
+            pxbBucket = new PictureBox();
+            pxbErazer = new PictureBox();
+            pxbBrush = new PictureBox();
+            pxbCanvas = new PictureBox();
             pnlTop.SuspendLayout();
             pnlR.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pbxTrash).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pbxSpray).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pbxBucket).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pbxErazer).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pbxBrush).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pxbColor).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pxbSave).BeginInit();
             ((System.ComponentModel.ISupportInitialize)nudSize).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pbxColor).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pxbTrash).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pxbSpray).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pxbBucket).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pxbErazer).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pxbBrush).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pxbCanvas).BeginInit();
             SuspendLayout();
             // 
             // pnlTop
@@ -61,7 +63,7 @@
             pnlTop.Dock = DockStyle.Top;
             pnlTop.Location = new Point(0, 0);
             pnlTop.Name = "pnlTop";
-            pnlTop.Size = new Size(880, 62);
+            pnlTop.Size = new Size(900, 60);
             pnlTop.TabIndex = 0;
             // 
             // lblName
@@ -81,7 +83,7 @@
             btnExit.FlatStyle = FlatStyle.Flat;
             btnExit.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point);
             btnExit.ForeColor = Color.Black;
-            btnExit.Location = new Point(818, 6);
+            btnExit.Location = new Point(840, 4);
             btnExit.Name = "btnExit";
             btnExit.Size = new Size(50, 50);
             btnExit.TabIndex = 0;
@@ -91,116 +93,129 @@
             // pnlR
             // 
             pnlR.BackColor = Color.FromArgb(255, 128, 255);
-            pnlR.Controls.Add(pbxColor);
-            pnlR.Controls.Add(pictureBox1);
+            pnlR.Controls.Add(pxbColor);
+            pnlR.Controls.Add(pxbSave);
             pnlR.Controls.Add(nudSize);
-            pnlR.Controls.Add(pbxTrash);
-            pnlR.Controls.Add(pbxSpray);
-            pnlR.Controls.Add(pbxBucket);
-            pnlR.Controls.Add(pbxErazer);
-            pnlR.Controls.Add(pbxBrush);
+            pnlR.Controls.Add(pxbTrash);
+            pnlR.Controls.Add(pxbSpray);
+            pnlR.Controls.Add(pxbBucket);
+            pnlR.Controls.Add(pxbErazer);
+            pnlR.Controls.Add(pxbBrush);
             pnlR.Dock = DockStyle.Right;
-            pnlR.Location = new Point(807, 62);
+            pnlR.Location = new Point(830, 60);
             pnlR.Name = "pnlR";
-            pnlR.Size = new Size(73, 617);
+            pnlR.Size = new Size(70, 640);
             pnlR.TabIndex = 1;
             // 
-            // pbxTrash
+            // pxbColor
             // 
-            pbxTrash.BackColor = Color.White;
-            pbxTrash.BorderStyle = BorderStyle.Fixed3D;
-            pbxTrash.Image = (Image)resources.GetObject("pbxTrash.Image");
-            pbxTrash.Location = new Point(11, 508);
-            pbxTrash.Name = "pbxTrash";
-            pbxTrash.Size = new Size(50, 50);
-            pbxTrash.SizeMode = PictureBoxSizeMode.StretchImage;
-            pbxTrash.TabIndex = 5;
-            pbxTrash.TabStop = false;
+            pxbColor.BackColor = Color.Black;
+            pxbColor.Location = new Point(10, 269);
+            pxbColor.Name = "pxbColor";
+            pxbColor.Size = new Size(50, 50);
+            pxbColor.SizeMode = PictureBoxSizeMode.StretchImage;
+            pxbColor.TabIndex = 8;
+            pxbColor.TabStop = false;
             // 
-            // pbxSpray
+            // pxbSave
             // 
-            pbxSpray.BackColor = Color.White;
-            pbxSpray.BorderStyle = BorderStyle.Fixed3D;
-            pbxSpray.Image = (Image)resources.GetObject("pbxSpray.Image");
-            pbxSpray.Location = new Point(11, 213);
-            pbxSpray.Name = "pbxSpray";
-            pbxSpray.Size = new Size(50, 50);
-            pbxSpray.SizeMode = PictureBoxSizeMode.StretchImage;
-            pbxSpray.TabIndex = 4;
-            pbxSpray.TabStop = false;
-            // 
-            // pbxBucket
-            // 
-            pbxBucket.BackColor = Color.White;
-            pbxBucket.BorderStyle = BorderStyle.Fixed3D;
-            pbxBucket.Image = (Image)resources.GetObject("pbxBucket.Image");
-            pbxBucket.Location = new Point(11, 157);
-            pbxBucket.Name = "pbxBucket";
-            pbxBucket.Size = new Size(50, 50);
-            pbxBucket.SizeMode = PictureBoxSizeMode.StretchImage;
-            pbxBucket.TabIndex = 3;
-            pbxBucket.TabStop = false;
-            // 
-            // pbxErazer
-            // 
-            pbxErazer.BackColor = Color.White;
-            pbxErazer.BorderStyle = BorderStyle.Fixed3D;
-            pbxErazer.Image = (Image)resources.GetObject("pbxErazer.Image");
-            pbxErazer.Location = new Point(11, 101);
-            pbxErazer.Name = "pbxErazer";
-            pbxErazer.Size = new Size(50, 50);
-            pbxErazer.SizeMode = PictureBoxSizeMode.StretchImage;
-            pbxErazer.TabIndex = 2;
-            pbxErazer.TabStop = false;
-            // 
-            // pbxBrush
-            // 
-            pbxBrush.BackColor = Color.Silver;
-            pbxBrush.BorderStyle = BorderStyle.Fixed3D;
-            pbxBrush.Image = (Image)resources.GetObject("pbxBrush.Image");
-            pbxBrush.Location = new Point(11, 45);
-            pbxBrush.Name = "pbxBrush";
-            pbxBrush.Size = new Size(50, 50);
-            pbxBrush.SizeMode = PictureBoxSizeMode.StretchImage;
-            pbxBrush.TabIndex = 1;
-            pbxBrush.TabStop = false;
+            pxbSave.BackColor = Color.White;
+            pxbSave.BorderStyle = BorderStyle.Fixed3D;
+            pxbSave.Image = (Image)resources.GetObject("pxbSave.Image");
+            pxbSave.Location = new Point(10, 564);
+            pxbSave.Name = "pxbSave";
+            pxbSave.Size = new Size(50, 50);
+            pxbSave.SizeMode = PictureBoxSizeMode.StretchImage;
+            pxbSave.TabIndex = 7;
+            pxbSave.TabStop = false;
             // 
             // nudSize
             // 
             nudSize.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            nudSize.Location = new Point(11, 6);
+            nudSize.Location = new Point(10, 5);
             nudSize.Name = "nudSize";
             nudSize.Size = new Size(50, 33);
             nudSize.TabIndex = 6;
             // 
-            // pictureBox1
+            // pxbTrash
             // 
-            pictureBox1.BackColor = Color.White;
-            pictureBox1.BorderStyle = BorderStyle.Fixed3D;
-            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(11, 564);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(50, 50);
-            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox1.TabIndex = 7;
-            pictureBox1.TabStop = false;
+            pxbTrash.BackColor = Color.White;
+            pxbTrash.BorderStyle = BorderStyle.Fixed3D;
+            pxbTrash.Image = (Image)resources.GetObject("pxbTrash.Image");
+            pxbTrash.Location = new Point(10, 508);
+            pxbTrash.Name = "pxbTrash";
+            pxbTrash.Size = new Size(50, 50);
+            pxbTrash.SizeMode = PictureBoxSizeMode.StretchImage;
+            pxbTrash.TabIndex = 5;
+            pxbTrash.TabStop = false;
             // 
-            // pbxColor
+            // pxbSpray
             // 
-            pbxColor.BackColor = Color.Black;
-            pbxColor.Location = new Point(11, 269);
-            pbxColor.Name = "pbxColor";
-            pbxColor.Size = new Size(50, 50);
-            pbxColor.SizeMode = PictureBoxSizeMode.StretchImage;
-            pbxColor.TabIndex = 8;
-            pbxColor.TabStop = false;
+            pxbSpray.BackColor = Color.White;
+            pxbSpray.BorderStyle = BorderStyle.Fixed3D;
+            pxbSpray.Image = (Image)resources.GetObject("pxbSpray.Image");
+            pxbSpray.Location = new Point(10, 213);
+            pxbSpray.Name = "pxbSpray";
+            pxbSpray.Size = new Size(50, 50);
+            pxbSpray.SizeMode = PictureBoxSizeMode.StretchImage;
+            pxbSpray.TabIndex = 4;
+            pxbSpray.TabStop = false;
+            // 
+            // pxbBucket
+            // 
+            pxbBucket.BackColor = Color.White;
+            pxbBucket.BorderStyle = BorderStyle.Fixed3D;
+            pxbBucket.Image = (Image)resources.GetObject("pxbBucket.Image");
+            pxbBucket.Location = new Point(10, 157);
+            pxbBucket.Name = "pxbBucket";
+            pxbBucket.Size = new Size(50, 50);
+            pxbBucket.SizeMode = PictureBoxSizeMode.StretchImage;
+            pxbBucket.TabIndex = 3;
+            pxbBucket.TabStop = false;
+            // 
+            // pxbErazer
+            // 
+            pxbErazer.BackColor = Color.White;
+            pxbErazer.BorderStyle = BorderStyle.Fixed3D;
+            pxbErazer.Image = (Image)resources.GetObject("pxbErazer.Image");
+            pxbErazer.Location = new Point(10, 101);
+            pxbErazer.Name = "pxbErazer";
+            pxbErazer.Size = new Size(50, 50);
+            pxbErazer.SizeMode = PictureBoxSizeMode.StretchImage;
+            pxbErazer.TabIndex = 2;
+            pxbErazer.TabStop = false;
+            // 
+            // pxbBrush
+            // 
+            pxbBrush.BackColor = Color.Silver;
+            pxbBrush.BorderStyle = BorderStyle.Fixed3D;
+            pxbBrush.Image = (Image)resources.GetObject("pxbBrush.Image");
+            pxbBrush.Location = new Point(10, 45);
+            pxbBrush.Name = "pxbBrush";
+            pxbBrush.Size = new Size(50, 50);
+            pxbBrush.SizeMode = PictureBoxSizeMode.StretchImage;
+            pxbBrush.TabIndex = 1;
+            pxbBrush.TabStop = false;
+            // 
+            // pxbCanvas
+            // 
+            pxbCanvas.BackColor = Color.Silver;
+            pxbCanvas.Location = new Point(0, 60);
+            pxbCanvas.Name = "pxbCanvas";
+            pxbCanvas.Size = new Size(830, 640);
+            pxbCanvas.TabIndex = 2;
+            pxbCanvas.TabStop = false;
+            pxbCanvas.MouseDown += pxbCanvas_MouseDown;
+            pxbCanvas.MouseMove += pxbCanvas_MouseMove;
+            pxbCanvas.MouseUp += pxbCanvas_MouseUp;
             // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
-            ClientSize = new Size(880, 679);
+            ClientSize = new Size(900, 700);
+            Controls.Add(pxbCanvas);
             Controls.Add(pnlR);
             Controls.Add(pnlTop);
             FormBorderStyle = FormBorderStyle.None;
@@ -209,14 +224,15 @@
             pnlTop.ResumeLayout(false);
             pnlTop.PerformLayout();
             pnlR.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)pbxTrash).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pbxSpray).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pbxBucket).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pbxErazer).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pbxBrush).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pxbColor).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pxbSave).EndInit();
             ((System.ComponentModel.ISupportInitialize)nudSize).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pbxColor).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pxbTrash).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pxbSpray).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pxbBucket).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pxbErazer).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pxbBrush).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pxbCanvas).EndInit();
             ResumeLayout(false);
         }
 
@@ -224,15 +240,16 @@
 
         private Panel pnlTop;
         private Panel pnlR;
-        private PictureBox pbxErazer;
-        private PictureBox pbxBrush;
+        private PictureBox pxbErazer;
+        private PictureBox pxbBrush;
         private Button btnExit;
-        private PictureBox pbxBucket;
-        private PictureBox pbxSpray;
+        private PictureBox pxbBucket;
+        private PictureBox pxbSpray;
         private Label lblName;
-        private PictureBox pbxTrash;
+        private PictureBox pxbTrash;
         private NumericUpDown nudSize;
-        private PictureBox pictureBox1;
-        private PictureBox pbxColor;
+        private PictureBox pxbSave;
+        private PictureBox pxbColor;
+        private PictureBox pxbCanvas;
     }
 }
