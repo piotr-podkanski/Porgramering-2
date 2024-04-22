@@ -5,14 +5,12 @@ namespace RitProgram.Classes
 {
     internal class ClearCanvas : ToolBase
     {
-        public ClearCanvas(Color color) : base(color, 1)
-        {
-        }
+        public ClearCanvas(Color setColor) : base(setColor, 1){}
 
-        public override void Draw(MouseEventArgs e, Point prevLocation, Graphics g)
+        public override void Use(MouseEventArgs e, Point prevLocation, Graphics g)
         {
-            // Clear the graphics context with the specified color
-            g.Clear(color);
+            // tömmer rit ytan genomn att sätta hela ytan till vit
+            g.Clear(setColor);
         }
     }
 }

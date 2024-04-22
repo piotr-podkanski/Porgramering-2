@@ -7,64 +7,56 @@ namespace RitProgram.Classes
 {
     internal class Bucket : ToolBase
     {
-        public Bitmap canvasBitmap;
+        // Fill funktionen använder sig av en bitmap, den bitmappen kommer vara samma bitmap som påm ritytan, denm får deklareras innan användning
+        public Bitmap canvasBitmap; 
+                                   
+        public Bucket(Color setColor) : base(setColor, 1) { }
 
-        public Bucket(Color color) : base(color, 1)
+        // vad som sker när redskapet används
+        public override void Use(MouseEventArgs e, Point Location, Graphics g)
         {
-        }
-
-        public override void Draw(MouseEventArgs e, Point prevLocation, Graphics g)
-        {
-            if (canvasBitmap == null) return;
-
-            // Get the color of the pixel at the mouse location on the Bitmap
+            // bestemmer vilken färg som ska bli förändrat
             Color targetColor = GetPixelColor(e.Location, canvasBitmap);
 
-            // Create a dictionary to track visited pixels during flood fill
-            Dictionary<Point, bool> visited = new Dictionary<Point, bool>();
+            // Bestemmer vilka pixlar som ska fyllas
+            FloodFill(e.Location, targetColor, setColor, canvasBitmap);
 
-            // Perform flood fill operation
-            FloodFill(e.Location, targetColor, Color, canvasBitmap);
-
-            // Draw the updated Bitmap onto the Graphics object
+            // Fyller i sädda pixlar
             g.DrawImage(canvasBitmap, Point.Empty);
         }
 
-
-        private Color GetPixelColor(Point location, Bitmap canvas)
+        // Denna funktionen hämtar vilken pixel som användaren klickar på
+        private Color GetPixelColor(Point location, Bitmap canvasBitmap)
         {
-            // Check if the location is within the bounds of the canvas
-            if (location.X < 0 || location.X >= canvas.Width || location.Y < 0 || location.Y >= canvas.Height)
-            {
-                // If the location is outside the canvas bounds, return a default color (black)
-                return Color.Black;
-            }
-
-            // Retrieve the color of the pixel from the canvas bitmap
-            return canvas.GetPixel(location.X, location.Y);
+            // Hämtar den färgen som trycks på
+            return canvasBitmap.GetPixel(location.X, location.Y);
         }
 
-        private const int MaxRecursionDepth = 1000;
-
-        private void FloodFill(Point startPoint, Color targetColor, Color fillColor, Bitmap canvas)
+        // bestämmer vilka pixlar som ska fyllas
+        private void FloodFill(Point startPoint, Color targetColor, Color setColor, Bitmap canvasBitmap)
         {
+            // Queue í enkalre ord är en array av element som sparas i FIFO formatet och skapar en kö
+            // FIFO är betyder first in first out som betyder att om ett element läggs till "KÖN" så kommer den också komma ut först
             Queue<Point> queue = new Queue<Point>();
-            queue.Enqueue(startPoint);
+            // Den lägger in de första punkten i kön
+            queue.Enqueue(startPoint); 
 
             while (queue.Count > 0)
             {
+                // tar bort den första pixeln från kön
                 Point currentPoint = queue.Dequeue();
+                
 
-                // Check if the current point is within the canvas bounds
-                if (IsWithinCanvasBounds(currentPoint, canvas.Size))
+                // Ser till att pixeln finn med i bitmappen, om den inte finns så struntar den i pixelns/ punkten
+                if (IsWithinCanvasBounds(currentPoint, canvasBitmap.Size))
                 {
-                    // Check if the current point has the target color
-                    if (canvas.GetPixel(currentPoint.X, currentPoint.Y) == targetColor)
+                    // Kollar så om färgen på pixeln är samma som man vill byta så att bara en typ av färg faktist ändras
+                    if (canvasBitmap.GetPixel(currentPoint.X, currentPoint.Y) == targetColor)
                     {
-                        // Fill the current point with the fill color
-                        canvas.SetPixel(currentPoint.X, currentPoint.Y, fillColor);
+                        // Bestämmer att denna punkten ska 
+                        canvasBitmap.SetPixel(currentPoint.X, currentPoint.Y, setColor);
 
-                        // Enqueue neighboring points for processing
+                        // ¨Lägger till granpixlarna till kön för att de ska kollas om de ska fyllas in eller ej
                         queue.Enqueue(new Point(currentPoint.X + 1, currentPoint.Y));
                         queue.Enqueue(new Point(currentPoint.X - 1, currentPoint.Y));
                         queue.Enqueue(new Point(currentPoint.X, currentPoint.Y + 1));
@@ -73,11 +65,8 @@ namespace RitProgram.Classes
                 }
             }
         }
-
-
-
-
-
+       
+        // används för att kolla om en pixel är på rit ytan.
         private bool IsWithinCanvasBounds(Point point, Size canvasSize)
         {
             return point.X >= 0 && point.X < canvasSize.Width &&
