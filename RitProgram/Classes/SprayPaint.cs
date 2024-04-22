@@ -6,54 +6,45 @@ namespace RitProgram.Classes
 {
     internal class SprayPaint : ToolBase
     {
+        // likt bucket denna class använder sig av en bitmap från rit ytan
         public Bitmap canvasBitmap;
 
-        public SprayPaint(Color color,int size) : base(color, size)
+        public SprayPaint(Color setColor,int setSize) : base(setColor, setSize) {}
+
+        public override void Use(MouseEventArgs e, Point prevLocation, Graphics g)
         {
 
-        }
+            // använder spray metoden för att bestämma vart den ská rita
+            Spray(e.Location, setColor, canvasBitmap);
 
-        public override void Draw(MouseEventArgs e, Point prevLocation, Graphics g)
-        {
-            if (canvasBitmap == null) return;
-
-            // Get the spray point from the current mouse location
-            Point sprayPoint = e.Location;
-
-            // Perform spraying
-            Spray(sprayPoint, Color, canvasBitmap);
-
-            // Draw the updated Bitmap onto the Graphics object
+            // ritar ut alla punkter från spray metoden 
             g.DrawImage(canvasBitmap, Point.Empty);
         }
 
         private void Spray(Point sprayPoint, Color color, Bitmap canvas)
         {
-            // Create a random number generator
+      
             Random random = new Random();
-
-            // Calculate the spray area based on the size of the spray tool
-            int sprayArea = size * 2; // Double the size for radius
-
-            // Loop through each pixel in a square region around the spray point
-            for (int x = sprayPoint.X - sprayArea; x <= sprayPoint.X + sprayArea; x++)
+            
+            // Slappar en area beroende på setSize, sedan loopar genom varjepixel för
+            for (int x = sprayPoint.X - setSize; x <= sprayPoint.X + setSize; x++)
             {
-                for (int y = sprayPoint.Y - sprayArea; y <= sprayPoint.Y + sprayArea; y++)
+                for (int y = sprayPoint.Y - setSize; y <= sprayPoint.Y + setSize; y++)
                 {
-                    // Add some randomness to the position to simulate spray effect
-                    int sprayX = x + random.Next(-size, size);
-                    int sprayY = y + random.Next(-size, size);
+                    // För att simulera  spray effekten, programmet slumpmässigt väler punkter
+                    int sprayX = x + random.Next(-setSize, setSize);
+                    int sprayY = y + random.Next(-setSize, setSize);
 
-                    // Check if the adjusted position is within the canvas bounds
+                    // Kollar om pixlarna är inom ritytan
                     if (IsWithinCanvasBounds(new Point(sprayX, sprayY), canvas.Size))
                     {
-                        // Set the pixel color to the spray color
+                        // Färgar pixeln
                         canvas.SetPixel(sprayX, sprayY, color);
                     }
                 }
             }
         }
-
+            
             private bool IsWithinCanvasBounds(Point point, Size canvasSize)
         {
             return point.X >= 0 && point.X < canvasSize.Width &&

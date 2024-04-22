@@ -6,36 +6,20 @@ namespace RitProgram.Classes
 {
     internal abstract class ToolBase
     {
-        protected Color color;
-        protected int size;
+        // pretected variabler så att bara classen och ärvande klasser har tillgång till dem
+        protected Color setColor;
+        protected int setSize;
         protected Pen pen;
-
-        public Pen Pen
-        {
-            get { return pen; }
-            set { pen = value; }
-        }
-        public Color Color
-        {
-            get { return color; }
-            set { color = value; }
-        }
-
-        public int Size
-        {
-            get { return size; }
-            set { size = value; }
-        }
 
         public ToolBase(Color color, int size)
         {
-            this.color = color;
-            this.size = size;
+            this.setColor = color;
+            this.setSize = size;
             pen = new Pen(color, size);
-            
         }
 
-        public abstract void Draw(MouseEventArgs e, Point prevLocation, Graphics g);
+        // deffinition av en funktion för alla redskap
+        public abstract void Use(MouseEventArgs e, Point prevLocation, Graphics g);
     }
 }
 

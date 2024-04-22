@@ -5,7 +5,7 @@ using System.Windows.Forms;
 
 internal class Eraser : ToolBase
 {
-    public Eraser(Color color, int size) : base(color, size)
+    public Eraser(Color setColor, int setSize) : base(setColor, setSize)
     {
         InitEraser();
     }
@@ -16,7 +16,7 @@ internal class Eraser : ToolBase
             System.Drawing.Drawing2D.DashCap.Round);
     }
 
-    public override void Draw(MouseEventArgs e, Point prevLocation, Graphics g)
+    public override void Use(MouseEventArgs e, Point prevLocation, Graphics g)
     {
         if (g == null)
             throw new ArgumentNullException(nameof(g));

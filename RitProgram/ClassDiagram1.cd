@@ -1,0 +1,73 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="RitProgram.Properties.Resources">
+    <Position X="14.25" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAABEAAAAQAAAAAAAAAAAAAAAIA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RitProgram.Classes.Bucket">
+    <Position X="9" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQAAAAAAAAAAAgAAAAAAAEAAQAAACAAAAACAAAAAAAA=</HashCode>
+      <FileName>Classes\Bucket.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RitProgram.Classes.ClearCanvas">
+    <Position X="11.5" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Classes\Clear.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RitProgram.Classes.SprayPaint">
+    <Position X="11.5" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQAAAAAAAAAAAgAAACAAAEAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Classes\SprayPaint.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RitProgram.Classes.temp_fill">
+    <Position X="16" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Classes\temp_fill.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RitProgram.Classes.ToolBase">
+    <Position X="7.25" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAigAAAIgAAAAAAAAAAACAAAAAgAAAAAA=</HashCode>
+      <FileName>Classes\ToolBase.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Eraser">
+    <Position X="4.5" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAgAAAAAAAAAAABAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Classes\Eraser.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Pencil">
+    <Position X="2.75" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Classes\Pencil.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RitProgram.Form1">
+    <Position X="17.75" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ERgABKQAACoACAYAgACCIEEaYCAgAQBCpAAxBAAAAAA=</HashCode>
+      <FileName>Form1.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RitProgram.Program">
+    <Position X="16" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAA=</HashCode>
+      <FileName>Program.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
